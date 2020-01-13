@@ -50,12 +50,6 @@ export default function HomePage() {
             <h2 style={{display: toggleH2 ? "block" : "none"}}>Search results for '{`${forVariable.searchTerm.charAt(0).toUpperCase()}${forVariable.searchTerm.slice(1)}`}' <span>(Powered by <a href="https://newsapi.org">News API)</a></span>: </h2>
             <div className="article-container">
                 {articleList}
-                {/* <div className="article">
-                    <img src="https://images.unsplash.com/photo-1577099625292-b8df48b73c04?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt=""/>
-                    <h3><a href="">Hamsters all over the world turn on owners</a></h3>
-                    <p className="description"> There is no apparent reason, but reports are coming in from all over the world that hamsters are turning on their owners. </p>
-                    <p className="source">Source: The Onion </p>
-                </div> */}
             </div>
         </div>
     )
