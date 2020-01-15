@@ -2,12 +2,15 @@ import React, {useState} from "react"
 import Axios from "axios"
 
 import ArticleList from "./ArticleList"
+require("dotenv").config()
 
 export default function HomePage() {
     const [inputData, setInputData] = useState({searchKeyword: ""})
     const [searchResults, setSearchResults] = useState([])
     const [toggleH2, setToggleH2] = useState(false)
     const [forVariable, setForVariable] = useState({searchTerm: ""})
+
+    const apiKey = process.env.REACT_APP_API_KEY
 
     function handleChange(e) {
     const {name, value} = e.target
@@ -23,7 +26,7 @@ export default function HomePage() {
     }
 
     function getData() {
-        Axios.get(`https://newsapi.org/v2/everything?q=${inputData.searchKeyword}&apiKey=6ea74b184e1d46f1b33560fb48edd364`)
+        Axios.get(`https://newsapi.org/v2/everything?q=${inputData.searchKeyword}&apiKey=${apiKey}`)
             .then(response => {
                 const articles = response.data.articles
                 setSearchResults([...articles])

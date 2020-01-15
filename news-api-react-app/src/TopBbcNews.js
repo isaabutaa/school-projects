@@ -1,13 +1,16 @@
 import React, {useState, useEffect} from "react"
 import Axios from "axios"
+require("dotenv").config()
 
 export default function TopBbcNews() {
     const [bbcNewsArticles, setBbcNews] = useState([])
 
+    const apiKey = process.env.REACT_APP_API_KEY
+
     useEffect(() => getBbcNews(), [])
 
     function getBbcNews() {
-        Axios.get("https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=6ea74b184e1d46f1b33560fb48edd364")
+        Axios.get(`https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=${apiKey}`)
             .then(response => {
                 const bbcArticles = response.data.articles
                 setBbcNews([...bbcArticles])

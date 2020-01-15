@@ -7,7 +7,6 @@ import TopEgypt from "./TopEgypt"
 import TopBbcNews from "./TopBbcNews"
 
 export default function App() {
-
     return (
         <div>
             <Header />

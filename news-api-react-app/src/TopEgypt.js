@@ -1,8 +1,11 @@
 import React, {useState, useEffect} from "react"
 import Axios from "axios"
+require("dotenv").config()
 
 export default function TopEgypt() {
     const [arabicArticles, setArabicArticles] = useState([])
+
+    const apiKey = process.env.REACT_APP_API_KEY
 
     useEffect(() => {
         let mounted = true
@@ -13,7 +16,7 @@ export default function TopEgypt() {
     }, [])
 
     function getArabicNews() {
-        Axios.get('https://newsapi.org/v2/top-headlines?country=eg&apiKey=6ea74b184e1d46f1b33560fb48edd364')
+        Axios.get(`https://newsapi.org/v2/top-headlines?country=eg&apiKey=${apiKey}`)
             .then(response => {
                 const articles = response.data.articles
                 setArabicArticles([...articles])
