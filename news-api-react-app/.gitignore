@@ -18,8 +18,8 @@
 .env.test.local
 .env.production.local
 .env
-/src/IMG_2215.png
-/src/IMG_2216.png
+./src/IMG_2215.png
+./src/IMG_2216.png
 
 npm-debug.log*
 yarn-debug.log*
