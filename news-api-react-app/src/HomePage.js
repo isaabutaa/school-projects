@@ -7,7 +7,7 @@ require("dotenv").config()
 export default function HomePage() {
     const [inputData, setInputData] = useState({searchKeyword: ""})
     const [searchResults, setSearchResults] = useState([])
-    const [toggleH2, setToggleH2] = useState(false)
+    const [toggle, setToggle] = useState(false)
     const [forVariable, setForVariable] = useState({searchTerm: ""})
 
     const apiKey = process.env.REACT_APP_API_KEY
@@ -22,7 +22,7 @@ export default function HomePage() {
         getData()
         setForVariable({searchTerm: inputData.searchKeyword})
         setInputData({searchKeyword: ""})
-        setToggleH2(true)
+        setToggle(true)
     }
 
     function getData() {
@@ -50,8 +50,8 @@ export default function HomePage() {
                 />
                 <button>Search</button>
             </form>
-            <h2 style={{display: toggleH2 ? "block" : "none"}}>Search results for '{`${forVariable.searchTerm.charAt(0).toUpperCase()}${forVariable.searchTerm.slice(1)}`}' <span>(Powered by <a href="https://newsapi.org">News API)</a></span>: </h2>
-            <div className="article-container">
+            <h2 className="search-results" style={{display: toggle ? "block" : "none"}}>Search results for '{`${forVariable.searchTerm}`}' : </h2>
+            <div className="article-container" >
                 {articleList}
             </div>
         </div>

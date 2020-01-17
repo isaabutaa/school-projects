@@ -2,11 +2,12 @@ body {
     margin: 0; 
     padding: 0;
     background-color: #ffffff;
+    height: 100vh;
 }
 
 /* Laptop-size styling */
 
-.header {
+.header, .footer {
     text-align: center;
     background-color: #CC553D;
     padding-top: 10px;
@@ -29,20 +30,10 @@ body {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-.header h3 {
-    color: #262626;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.header h1 > .block-letter {
+.block-letter {
     color: ghostwhite;
     background-color: #262626;
     padding: 4px 4px;
-}
-
-.header h3 > a {
-    color: #ffffff;
-    text-decoration-line: none;
 }
 
 .navbar {
@@ -55,12 +46,11 @@ body {
 }
 
 .nav-link {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: #262626;
     color: #ffffff;
     text-decoration-line: none;
     border: 1px solid #262626;
-    border-radius: 10px;
     margin: 10px;
     padding: 5px;
 }
@@ -86,7 +76,7 @@ body {
 #search-form {
     width: 60vw;
     margin: 50px auto;
-    padding: 10px 15px;
+    padding: 10px;
 }
 
 #search-form:hover {
@@ -94,22 +84,27 @@ body {
 }
 
 #search-form input {
-    width: 85%;
-    font-size: 15px;
-    padding: 5px;
+    width: 80%;
+    font-size: 17px;
+    padding: 10px;
     border: 1px solid #262626;
 }
 
 #search-form button {
-    font-size: 15px;
-    padding: 5px;
-    margin-left: 20px;
+    position: relative;
+    left: 2.5%;
+    font-size: 17px;
+    padding: 10px;
     border: 1px solid #262626;
+}
+
+.search-results {
+    font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .article-container {
     width: 85vw;
-    margin: auto;
+    margin: 25px auto 125px auto;
     background-color: #CC553D;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -120,7 +115,7 @@ body {
     flex-direction: column;
     align-items: center;
     background-color: #ffffff;
-    margin: 10px 10px;
+    margin: 10px;
 }
 
 .article img {
@@ -135,12 +130,39 @@ body {
 }
 
 .article h3, .article p {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
     padding: 0 15px;
 }
 
 .article p {
     font-size: 17px;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-top: 3px solid #262626;
+}
+
+.footer .block-letter{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    display: inline-block;
+    padding: 5px;
+    margin: 10px;
+}
+
+.footer h3 {
+    color: #262626;
+    font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 22px;
+    display: inline-block;
+}
+
+.footer h3 > a {
+    color: #ffffff;
+    text-decoration-line: none;
 }
 
 @media only screen and (min-width: 1535px) {
@@ -153,14 +175,62 @@ body {
     .article-container {
         grid-template-columns: repeat(2, 1fr)
     }
+
+    #search-form input {
+        font-size: 13px;
+        padding: 7px;
+    }
+    
+    #search-form button {
+        font-size: 13px;
+        padding: 7px;
+    }
 }
 
 @media only screen and (max-width: 750px) {
+    .header img {
+        height: 150px;
+    }
+
+    .header h1 {
+        font-size: 20px;
+    }
+
+    .nav-link {
+        font-size: 15px;
+    }
+
     .article-container {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
+
+    #search-form input {
+        font-size: 12px;
+        padding: 5px;
+    }
+    
+    #search-form button {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    .article-container {
+        margin: 25px auto 100px auto;
+    }
+
+    .footer h2, .footer h3 {
+        font-size: 17px;
+    }
 }
+
+@media only screen and (max-width: 500px) {
+    #search-form {
+        width: 85%;
+    }
+}
+
+
 
 

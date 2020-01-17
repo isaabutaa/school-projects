@@ -7,7 +7,13 @@ export default function TopBbcNews() {
 
     const apiKey = process.env.REACT_APP_API_KEY
 
-    useEffect(() => getBbcNews(), [])
+    useEffect(() => {
+        let mounted = true
+        if(mounted) {
+            getBbcNews()
+        }
+        return () => mounted = false
+    } , [])
 
     function getBbcNews() {
         Axios.get(`https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=${apiKey}`)
