@@ -1,10 +1,11 @@
 import React, {useState} from "react"
 import axios from "axios"
 
-import Header from "./Header"
-import SearchForm from "./SearchForm"
-import Word from "./Word"
-import ThesaurusResults from "./ThesaurusResults"
+import Header from "./components/Header"
+import SearchForm from "./components/SearchForm"
+import Word from "./components/Word"
+import ThesaurusResults from "./components/ThesaurusResults"
+import Footer from "./components/Footer"
 require("dotenv").config()
 
 function App() {
@@ -46,74 +47,7 @@ function App() {
             <SearchForm searchDictionary={dictionarySearch} searchThesaurus={thesaurusSearch} />
             {wordData.map((wordObj, i) => <Word key={i} word={wordObj} />)}
             {thesaurusData.map((wordObj, i) => <ThesaurusResults key={i} results={wordObj} />)}
-            <div>
-            <div className="search-results">
-                <div>
-                    <div className="circle"></div>
-                    <h2 className="results-h2" style={{color: "#222"}} >herculean</h2>
-                </div>
-                <h3>definitions:</h3>
-                <ol>
-                    <li>of, relating to, or characteristic of Heroes</li>
-                    <li>of extraordinary power, extent, intensity, or difficulty</li>
-                </ol>
-            </div>
-            <div className="search-results">
-                <div>
-                    <div className="circle"></div>
-                    <h2 className="results-h2" style={{color: "#222"}} >herculean</h2>
-                </div>
-                <h3>definitions:</h3>
-                <ol>
-                    <li>of, relating to, or characteristic of Heroes</li>
-                    <li>of extraordinary power, extent, intensity, or difficulty</li>
-                </ol>
-            </div>
-            <div className="search-results">
-                <div>
-                    <div className="circle"></div>
-                    <h2 className="results-h2" style={{color: "#222"}} >herculean</h2>
-                </div>
-                <h3>definitions:</h3>
-                <ol>
-                    <li>of, relating to, or characteristic of Heroes</li>
-                    <li>of extraordinary power, extent, intensity, or difficulty</li>
-                </ol>
-            </div>
-            <div className="search-results">
-                <div>
-                    <div className="circle"></div>
-                    <h2 className="results-h2" style={{color: "#222"}} >herculean</h2>
-                </div>
-                <h3>definitions:</h3>
-                <ol>
-                    <li>of, relating to, or characteristic of Heroes</li>
-                    <li>of extraordinary power, extent, intensity, or difficulty</li>
-                </ol>
-            </div>
-            <div className="search-results">
-                <div>
-                    <div className="circle"></div>
-                    <h2 className="results-h2" style={{color: "#222"}} >herculean</h2>
-                </div>
-                <h3>definitions:</h3>
-                <ol>
-                    <li>of, relating to, or characteristic of Heroes</li>
-                    <li>of extraordinary power, extent, intensity, or difficulty</li>
-                </ol>
-            </div>
-            <div className="search-results">
-                <div>
-                    <div className="circle"></div>
-                    <h2 className="results-h2" style={{color: "#222"}} >herculean</h2>
-                </div>
-                <h3>definitions:</h3>
-                <ol>
-                    <li>of, relating to, or characteristic of Heroes</li>
-                    <li>of extraordinary power, extent, intensity, or difficulty</li>
-                </ol>
-            </div>
-        </div>
+            <Footer />
         </div>
     )
 }

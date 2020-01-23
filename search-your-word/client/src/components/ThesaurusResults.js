@@ -4,9 +4,11 @@ function ThesaurusResults(props) {
     const {results} = props
     return (
         <div className="search-results">
-            <div className="circle" style={{background: "crimson"}}></div>
-            <h2 className="results-h2">{results.meta.id}</h2>
-            <h3>definitions:</h3>
+            <div className="circle-word-flex-container">
+                <div className="circle" style={{background: "crimson"}}></div>
+                <h2 className="results-h2">{results.meta.id}</h2>
+            </div>
+            <h3>{results.shortdef.length > 1 ? "definitions:" : "definition:"}</h3>
             <ol>
                 {results.shortdef.map((definition, i) => <li key={i}> {definition} </li>)}
             </ol>
