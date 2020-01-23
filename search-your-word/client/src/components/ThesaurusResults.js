@@ -3,7 +3,7 @@ import React from "react"
 function ThesaurusResults(props) {
     const {results} = props
     return (
-        <div className="search-results">
+        <>
             <div className="circle-word-flex-container">
                 <div className="circle" style={{background: "crimson"}}></div>
                 <h2 className="results-h2">{results.meta.id}</h2>
@@ -20,7 +20,7 @@ function ThesaurusResults(props) {
             <ol>
                 {results.meta.ants.map((antArr, i) => <li key={i}> {antArr.join(", ")} </li>)}
             </ol>
-        </div>
+        </>
     )
 }
 

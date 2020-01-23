@@ -45,8 +45,10 @@ function App() {
         <div>
             <Header />
             <SearchForm searchDictionary={dictionarySearch} searchThesaurus={thesaurusSearch} />
-            {wordData.map((wordObj, i) => <Word key={i} word={wordObj} />)}
-            {thesaurusData.map((wordObj, i) => <ThesaurusResults key={i} results={wordObj} />)}
+            <div className="search-results">
+                {wordData.map((wordObj, i) => <Word key={i} word={wordObj} />)}
+                {thesaurusData.map((wordObj, i) => <ThesaurusResults key={i} results={wordObj} />)}
+            </div>
             <Footer />
         </div>
     )
