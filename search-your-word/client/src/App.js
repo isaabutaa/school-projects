@@ -48,8 +48,10 @@ function App() {
             {thesaurusData.map((wordObj, i) => <ThesaurusResults key={i} results={wordObj} />)}
             <div>
             <div className="search-results">
-                <div className="circle"></div>
-                <h2 className="results-h2" style={{color: "#222"}} >herculean</h2>
+                <div>
+                    <div className="circle"></div>
+                    <h2 className="results-h2" style={{color: "#222"}} >herculean</h2>
+                </div>
                 <h3>definitions:</h3>
                 <ol>
                     <li>of, relating to, or characteristic of Heroes</li>
@@ -57,8 +59,10 @@ function App() {
                 </ol>
             </div>
             <div className="search-results">
-                <div className="circle"></div>
-                <h2 className="results-h2" style={{color: "#222"}} >herculean</h2>
+                <div>
+                    <div className="circle"></div>
+                    <h2 className="results-h2" style={{color: "#222"}} >herculean</h2>
+                </div>
                 <h3>definitions:</h3>
                 <ol>
                     <li>of, relating to, or characteristic of Heroes</li>
@@ -66,8 +70,10 @@ function App() {
                 </ol>
             </div>
             <div className="search-results">
-                <div className="circle"></div>
-                <h2 className="results-h2" style={{color: "#222"}} >herculean</h2>
+                <div>
+                    <div className="circle"></div>
+                    <h2 className="results-h2" style={{color: "#222"}} >herculean</h2>
+                </div>
                 <h3>definitions:</h3>
                 <ol>
                     <li>of, relating to, or characteristic of Heroes</li>
@@ -75,8 +81,10 @@ function App() {
                 </ol>
             </div>
             <div className="search-results">
-                <div className="circle"></div>
-                <h2 className="results-h2" style={{color: "#222"}} >herculean</h2>
+                <div>
+                    <div className="circle"></div>
+                    <h2 className="results-h2" style={{color: "#222"}} >herculean</h2>
+                </div>
                 <h3>definitions:</h3>
                 <ol>
                     <li>of, relating to, or characteristic of Heroes</li>
@@ -84,8 +92,10 @@ function App() {
                 </ol>
             </div>
             <div className="search-results">
-                <div className="circle"></div>
-                <h2 className="results-h2" style={{color: "#222"}} >herculean</h2>
+                <div>
+                    <div className="circle"></div>
+                    <h2 className="results-h2" style={{color: "#222"}} >herculean</h2>
+                </div>
                 <h3>definitions:</h3>
                 <ol>
                     <li>of, relating to, or characteristic of Heroes</li>
@@ -93,8 +103,10 @@ function App() {
                 </ol>
             </div>
             <div className="search-results">
-                <div className="circle"></div>
-                <h2 className="results-h2" style={{color: "#222"}} >herculean</h2>
+                <div>
+                    <div className="circle"></div>
+                    <h2 className="results-h2" style={{color: "#222"}} >herculean</h2>
+                </div>
                 <h3>definitions:</h3>
                 <ol>
                     <li>of, relating to, or characteristic of Heroes</li>
