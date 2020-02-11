@@ -3,6 +3,7 @@ const app = express()
 require("dotenv").config()
 const morgan = require('morgan')
 const mongoose = require('mongoose')
+const expressJWT = require("express-jwt")
 const PORT = 8500
 
 // middleware
@@ -21,7 +22,8 @@ mongoose.connect('mongodb://localhost:27017/rockTheVoteDB', {
 
 // routes
 app.use("/auth", require("./routes/authRouter.js"))
-app.use('/issues', require('./routes/issueRouter.js'))
+app.use("/api", expressJWT({ secret: process.env.SECRET }))
+app.use('/api/issues', require('./routes/issueRouter.js'))
 
 // error handling
 app.use((err, req, res, next) => {
