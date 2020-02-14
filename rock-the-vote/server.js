@@ -4,7 +4,7 @@ require("dotenv").config()
 const morgan = require('morgan')
 const mongoose = require('mongoose')
 const expressJWT = require("express-jwt")
-const PORT = 8500
+const PORT = 9000
 
 // middleware
 app.use(express.json())
