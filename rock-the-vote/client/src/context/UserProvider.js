@@ -68,6 +68,13 @@ export default function UserProvider(props) {
         }))
     }
 
+    function resetAuthErr() {
+        setUserState(prevState => ({
+            ...prevState,
+            errMsg: ""
+        }))
+    }
+
     function getUserIssues() {
         userAxios.get("/api/issues/user")
             .then(res => {
@@ -97,7 +104,8 @@ export default function UserProvider(props) {
                 signup,
                 login,
                 logout,
-                addIssue
+                addIssue,
+                resetAuthErr
             }}>
             { props.children }
         </UserContext.Provider>

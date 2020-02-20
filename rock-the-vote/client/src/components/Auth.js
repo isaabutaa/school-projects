@@ -3,7 +3,7 @@ import AuthForm from "./AuthForm.js"
 import { UserContext } from "../context/UserProvider.js"
 
 export default function Auth(props) {
-    const { signup, login, errMsg } = useContext(UserContext)
+    const { signup, login, errMsg, resetAuthErr } = useContext(UserContext)
     const initInputs = { username: "", password: "" }
     const [inputs, setInputs] = useState(initInputs)
     const [toggle, setToggle] = useState(false)
@@ -26,6 +26,11 @@ export default function Auth(props) {
         login(inputs)
     }
 
+    function toggleForm() {
+        setToggle(prevToggle => !prevToggle)
+        resetAuthErr()
+    }
+
     return (
         <div>
             <h1>Rock the Vote</h1>
@@ -37,7 +42,7 @@ export default function Auth(props) {
                         inputs={inputs}
                         btnTxt="Sign up"
                         errMsg={errMsg} />
-                    <p onClick={() => setToggle(prevToggle => !prevToggle)}>Already a member?</p>
+                    <p onClick={toggleForm}>Already a member?</p>
                 </>
             :
                 <>
@@ -47,7 +52,7 @@ export default function Auth(props) {
                         inputs={inputs}
                         btnTxt="Login"
                         errMsg={errMsg} />
-                    <p onClick={() => setToggle(prevToggle => !prevToggle)}>Not a member?</p>
+                    <p onClick={toggleForm}>Not a member?</p>
                 </>
             }
         </div>
