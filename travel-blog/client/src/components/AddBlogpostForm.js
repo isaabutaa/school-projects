@@ -14,7 +14,8 @@ export default function AddBlogpost(props) {
         }))
     }
 
-    function handleClick() {
+    function handleClick(e) {
+        e.preventDefault()
         addPost(blogpost)
         setBlogpost(initPost)
     }

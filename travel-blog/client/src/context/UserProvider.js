@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import axios from "axios"
-import { config } from "dotenv/types"
 
 export const UserContext = React.createContext()
 
@@ -70,12 +69,19 @@ export default function UserProvider(props) {
         }))
     }
 
+    function resetAuthErr() {
+        setUserState(prevUserState => ({
+            ...prevUserState,
+            errMsg: ""
+        }))
+    }
+
     function getUserPosts() {
         userAxios.get("/api/blogposts/user")
             .then(res => {
                 setUserState(prevUserState => ({
                     ...prevUserState,
-                    blogposts: [res.data]
+                    blogposts: res.data
                 }))
             })
             .catch(err => console.log(err.response.data.errMsg))
@@ -99,7 +105,8 @@ export default function UserProvider(props) {
                 signup,
                 login,
                 logout,
-                addPost
+                addPost,
+                resetAuthErr
             }}
         >
             { props.children }
