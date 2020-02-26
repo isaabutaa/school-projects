@@ -29,7 +29,7 @@ const {
                 onChange={handleChange} 
             />
             <button>{btnTxt}</button>
-            <p style={{color: "red"}}>{errMsg}</p>
+            <p style={{color: "red"}}>{ errMsg }</p>
         </form>
     )
 }
