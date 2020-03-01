@@ -79,6 +79,7 @@ export default function UserProvider(props) {
     function getUserPosts() {
         userAxios.get("/api/blogposts/user")
             .then(res => {
+                console.log(res.data)
                 setUserState(prevUserState => ({
                     ...prevUserState,
                     blogposts: res.data
