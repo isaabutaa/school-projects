@@ -20,7 +20,7 @@ export default function App() {
                 redirectTo="/"
                 token={token}
             />
-            <ProtectedRoute 
+            <ProtectedRoute
                 path="/profile/:postId"
                 component={PostDetailPage}
                 redirectTo="/"

@@ -1,10 +1,15 @@
-import React, { useContext } from "react"
+import React, { useEffect, useContext } from "react"
 import { Link } from "react-router-dom"
 import { UserContext } from "../context/UserProvider.js"
 import AddBlogpostForm from "./AddBlogpostForm.js"
 
 export default function Profile() {
-    const { blogposts, user: { username }, logout, addPost } = useContext(UserContext)
+    const { blogposts, user: { username }, logout, addPost, getUserPosts } = useContext(UserContext)
+
+    useEffect(() => {
+        getUserPosts()
+    }, [])
+
     return (
         <div>
             <p onClick={logout} style={{textDecorationLine: "underline"}}>Logout</p>

@@ -41,7 +41,7 @@ export default function UserProvider(props) {
                 const { user, token } = res.data
                 localStorage.setItem("token", token)
                 localStorage.setItem("user", JSON.stringify(user))
-                getUserPosts()
+                // getUserPosts()
                 setUserState(prevUserState => ({
                     ...prevUserState,
                     user,
@@ -79,7 +79,6 @@ export default function UserProvider(props) {
     function getUserPosts() {
         userAxios.get("/api/blogposts/user")
             .then(res => {
-                console.log(res.data)
                 setUserState(prevUserState => ({
                     ...prevUserState,
                     blogposts: res.data
@@ -107,6 +106,7 @@ export default function UserProvider(props) {
                 login,
                 logout,
                 addPost,
+                getUserPosts,
                 resetAuthErr
             }}
         >
