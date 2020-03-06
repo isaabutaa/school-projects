@@ -2,7 +2,6 @@ import React, { useContext } from "react"
 import { Switch, Route, Redirect } from "react-router-dom"
 import Auth from "./components/Auth.js"
 import Profile from "./components/Profile.js"
-import PostDetailPage from "./components/PostDetailPage.js"
 import ProtectedRoute from "./components/ProtectedRoute.js"
 import { UserContext } from "./context/UserProvider.js"
 
@@ -17,12 +16,6 @@ export default function App() {
                 exact
                 path="/profile"
                 component={Profile}
-                redirectTo="/"
-                token={token}
-            />
-            <ProtectedRoute
-                path="/profile/:postId"
-                component={PostDetailPage}
                 redirectTo="/"
                 token={token}
             />

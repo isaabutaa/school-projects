@@ -15,7 +15,7 @@ export default function Profile() {
             <p onClick={logout} style={{textDecorationLine: "underline"}}>Logout</p>
             <h1>Hello, {username}.</h1>
             <h2>Add a new blog post</h2>
-            <AddBlogpostForm addPost={addPost} />
+            <AddBlogpostForm submit={addPost} btnTxt="Add Post" />
             <p>Here is a list of all of your blog posts: </p>
             <ListPosts />
         </div> 

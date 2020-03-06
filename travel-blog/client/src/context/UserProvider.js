@@ -108,9 +108,14 @@ export default function UserProvider(props) {
             .catch(err => console.log(err.response.data.errMsg))
     }
 
-    function editPost(postId, updatedPost) {
+    function editPost(updatedPost, postId) {
         userAxios.put(`/api/blogposts/${postId}`, updatedPost)
-            .then(res => console.log(res))
+            .then(res => {
+                setUserState(prevUserState => ({
+                    ...prevUserState,
+                    blogposts: prevUserState.blogposts.map(post => post._id !== postId ? post : res.data)
+                }))
+            })
             .catch(err => console.log(err.response.data.errMsg))
     }
 
