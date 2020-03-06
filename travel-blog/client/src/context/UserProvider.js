@@ -41,7 +41,6 @@ export default function UserProvider(props) {
                 const { user, token } = res.data
                 localStorage.setItem("token", token)
                 localStorage.setItem("user", JSON.stringify(user))
-                // getUserPosts()
                 setUserState(prevUserState => ({
                     ...prevUserState,
                     user,
@@ -98,6 +97,23 @@ export default function UserProvider(props) {
             .catch(err => console.log(err.response.data.errMsg))
     }
 
+    function deletePost(postId) {
+        userAxios.delete(`/api/blogposts/${postId}`)
+            .then(res => {
+                setUserState(prevUserState => ({
+                    ...prevUserState,
+                    blogposts: prevUserState.blogposts.filter(post => post._id !== postId)
+                }))
+            })
+            .catch(err => console.log(err.response.data.errMsg))
+    }
+
+    function editPost(postId, updatedPost) {
+        userAxios.put(`/api/blogposts/${postId}`, updatedPost)
+            .then(res => console.log(res))
+            .catch(err => console.log(err.response.data.errMsg))
+    }
+
     return (
         <UserContext.Provider
             value={{
@@ -107,6 +123,8 @@ export default function UserProvider(props) {
                 logout,
                 addPost,
                 getUserPosts,
+                deletePost,
+                editPost,
                 resetAuthErr
             }}
         >
