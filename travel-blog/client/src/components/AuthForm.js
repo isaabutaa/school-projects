@@ -13,8 +13,9 @@ const {
 } = props
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="form" onSubmit={handleSubmit}>
             <input 
+                className="form-child"
                 type="text" 
                 name="username" 
                 value={username}
@@ -22,13 +23,14 @@ const {
                 onChange={handleChange}
             />
             <input 
+                className="form-child"
                 type="text" 
                 name="password" 
                 value={password}
                 placeholder="Password"
                 onChange={handleChange} 
             />
-            <button>{btnTxt}</button>
+            <button className="form-child">{btnTxt}</button>
             <p style={{color: "red"}}>{ errMsg }</p>
         </form>
     )

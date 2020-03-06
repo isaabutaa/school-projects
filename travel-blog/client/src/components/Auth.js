@@ -36,7 +36,11 @@ export default function Auth() {
     const text = !toggle ? "Sign up" : "Login"
 
     return (
-        <div>
+        <div className="welcome-page">
+            <img className="funny-img" src="https://images.unsplash.com/photo-1507808973436-a4ed7b5e87c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" alt=""/>
+            <p className="photo-cred">Photo by <a href="https://unsplash.com/@dominik_photography" rel="noopener noreferrer" target="_blank">Dominik Vanyi</a></p>
+            <h1>Welcome to <span className="blahg-head">Blahg Heads</span></h1>
+            <h2>Where <span className="blah">'Blah'</span> is the standard.</h2>
             <h1>{text} Page</h1>
             { !toggle ?
                 <>
@@ -47,7 +51,7 @@ export default function Auth() {
                         errMsg={errMsg}
                         btnTxt="Sign up"
                     />
-                    <p onClick={toggleForm}>Already a member?</p>
+                    <p onClick={toggleForm} style={{textDecorationLine: "underline"}}>Already a member?</p>
                 </>
                 :
                 <>
@@ -58,7 +62,7 @@ export default function Auth() {
                         errMsg={errMsg}
                         btnTxt="Login"
                     />
-                    <p onClick={toggleForm}>Not a member?</p>
+                    <p onClick={toggleForm} style={{textDecorationLine: "underline"}}>Not a member?</p>
                 </>
             }
         </div>

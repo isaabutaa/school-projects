@@ -11,12 +11,12 @@ export default function Profile() {
     }, [])
 
     return (
-        <div>
+        <div className="profile">
             <p onClick={logout} style={{textDecorationLine: "underline"}}>Logout</p>
-            <h1>Hello, {username}.</h1>
+            <h1>Hello, <span className="username">{username}</span>.</h1>
             <h2>Add a new blog post</h2>
             <AddBlogpostForm submit={addPost} btnTxt="Add Post" />
-            <p>Here is a list of all of your blog posts: </p>
+            <h2>Your blog posts: </h2>
             <ListPosts />
         </div> 
     )

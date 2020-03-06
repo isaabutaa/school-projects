@@ -9,7 +9,6 @@ export default function App() {
     const { token } = useContext(UserContext)
     return (
         <div>
-        <h1>Welcome to Thunder Dome!</h1>
         <Switch>
             <Route exact path="/" render={() => token ? <Redirect to="/profile" /> : <Auth/>} />
             <ProtectedRoute 

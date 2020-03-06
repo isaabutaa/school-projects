@@ -12,14 +12,14 @@ export default function Post(props) {
     }
 
     return (
-        <div>
+        <>
             { !toggleForm ?
-            <>
+            <div className="post">
                 <h3>{title}</h3>
                 <p>{content}</p>
-                <button onClick={handleEditClick}>Edit</button>
-                <button onClick={() => deletePost(_id)}>Delete</button>
-            </>
+                <button className="btn" onClick={handleEditClick}>Edit</button>
+                <button className="btn" onClick={() => deletePost(_id)}>Delete</button>
+            </div>
             :
             <>
                 <AddBlogPostForm 
@@ -29,9 +29,9 @@ export default function Post(props) {
                     _id={_id}
                     btnTxt="Update Post"
                 />
-                <button onClick={handleEditClick}>Close</button>
+                <button className="btn" onClick={handleEditClick}>Close</button>
             </>
             }
-        </div>
+        </>
     )
 }

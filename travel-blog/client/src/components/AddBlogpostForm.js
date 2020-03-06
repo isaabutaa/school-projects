@@ -24,10 +24,10 @@ export default function AddBlogpost(props) {
     }
 
     return (
-        <form>
-            <input type="text" name="title" value={title} placeholder="Title" onChange={handleChange} />
-            <input type="text" name="content" value={content} placeholder="Type content here..." onChange={handleChange} />
-            <button onClick={handleClick}>{btnTxt}</button>
+        <form className="form">
+            <input className="form-child" type="text" name="title" value={title} placeholder="Title" onChange={handleChange} />
+            <textarea className="form-child" type="text" name="content" value={content} placeholder="Type content here..." onChange={handleChange} />
+            <button className="form-child" onClick={handleClick}>{btnTxt}</button>
         </form>
     )
 }
