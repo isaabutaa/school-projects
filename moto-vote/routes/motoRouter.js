@@ -15,8 +15,20 @@ motoRouter.get("/", (req, res, next) => {
     })
 })
 
+// Get by user Id
+motoRouter.get("/user", (req, res, next) => {
+    Moto.find({ user: req.user._id }, (err, motos) => {
+        if(err) {
+            res.status(500)
+            return next(err)
+        }
+        return res.status(200).send(motos)
+    })
+})
+
 // Post
 motoRouter.post("/", (req, res, next) => {
+    req.body.user = req.user._id
     const newMoto = new Moto(req.body)
     newMoto.save((err, savedMoto) => {
         if(err) {
@@ -30,7 +42,7 @@ motoRouter.post("/", (req, res, next) => {
 // Put
 motoRouter.put("/:motoId", (req, res, next) => {
     Moto.findOneAndUpdate(
-        { _id: req.params.motoId },
+        { _id: req.params.motoId, user: req.user._id },
         req.body,
         { new: true },
         (err, updatedMoto) => {
@@ -46,7 +58,7 @@ motoRouter.put("/:motoId", (req, res, next) => {
 // Delete
 motoRouter.delete("/:motoId", (req, res, next) => {
     Moto.findOneAndDelete(
-        { _id: req.params.motoId },
+        { _id: req.params.motoId, user: req.user._id },
         (err, deletedMoto) => {
             if(err) {
                 res.status(500)

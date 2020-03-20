@@ -10,8 +10,13 @@ const motoSchema = new Schema({
         type: String,
         required: true
     },
-    image: {
+    imgUrl: {
         type: String,
+        required: true
+    },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: "User",
         required: true
     }
 })
