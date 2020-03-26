@@ -13,13 +13,13 @@ export default function AuthForm(props) {
             <input 
                 type="text" 
                 name="username" 
-                value={username} 
+                // value={username} 
                 placeholder="Username" 
             />
             <input 
                 type="text" 
                 name="password" 
-                value={password} 
+                // value={password} 
                 placeholder="Password" 
             />
             <button>{btnTxt}</button>

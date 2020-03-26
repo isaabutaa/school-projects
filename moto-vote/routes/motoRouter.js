@@ -64,7 +64,7 @@ motoRouter.delete("/:motoId", (req, res, next) => {
                 res.status(500)
                 return next(err)
             }
-            return res.status(200).send(`Successfully deleted ${deletedMoto.name}`)
+            return res.status(200).send(`Successfully deleted ${deletedMoto.title}`)
         }
     )
 })
