@@ -7,7 +7,7 @@ const initInputs = {
 }
 
 export default function MotoPostForm(props) {
-    const {btnTxt} = props
+    const { btnTxt, addMotoPost } = props
     const [inputs, setInputs] = useState(initInputs)
     const {title, description, imgUrl} = inputs
 
@@ -21,7 +21,8 @@ export default function MotoPostForm(props) {
 
     function handleSubmit(e) {
         e.preventDefault()
-        // add motopost
+        addMotoPost(inputs)
+        setInputs(initInputs)
     }
 
     return (

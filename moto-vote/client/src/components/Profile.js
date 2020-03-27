@@ -1,15 +1,17 @@
-import React from "react"
+import React, { useContext } from "react"
 import MotoPostForm from "./MotoPostForm.js"
 import MotoPostList from "./MotoPostList.js"
-import MotoPost from "./MotoPost.js"
+import {UserContext} from "../context/UserProvider.js"
 
 export default function Profile() {
+    const { motoPosts, user: { username }, addMotoPost } = useContext(UserContext)
     return (
         <div>
-            <p>This is your profile page @username</p>
+            <p>This is your profile page @{username}</p>
             <p>Add post form goes here</p>
-            <MotoPostForm btnTxt="Add MotoPost" />
+            <MotoPostForm addMotoPost={addMotoPost} btnTxt="Add MotoPost" />
             <p>List of your previous posts goes here</p>
+            {/* <MotoPostList motoPosts={motoPosts} /> */}
         </div>
     )
 }
