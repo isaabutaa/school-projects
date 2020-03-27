@@ -5,8 +5,7 @@ export default function MotoPost(props) {
 
     return (
         <div className="motopost">
-            {/* <img /> */}
-            <p>Image goes here</p>
+            <img src={imgUrl} alt="" />
             <h2>{title}</h2>
             <p>{description}</p>
             <button className="button edit-btn">Edit</button>

@@ -11,7 +11,7 @@ export default function Profile() {
             <p>Add post form goes here</p>
             <MotoPostForm addMotoPost={addMotoPost} btnTxt="Add MotoPost" />
             <p>List of your previous posts goes here</p>
-            {/* <MotoPostList motoPosts={motoPosts} /> */}
+            <MotoPostList motoPosts={motoPosts} />
         </div>
     )
 }

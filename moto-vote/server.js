@@ -23,7 +23,7 @@ mongoose.connect("mongodb://localhost:27017/moto-vote",
 
 // routes
 app.use("/auth", require("./routes/authRouter.js"))
-app.use("api", expressJwt({ secret: process.env.SECRET }))
+app.use("/api", expressJwt({ secret: process.env.SECRET }))
 app.use("/api/motos", require("./routes/motoRouter.js"))
 
 // error handling

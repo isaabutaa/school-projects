@@ -61,7 +61,12 @@ export default function UserProvider(props) {
 
     function addMotoPost(newMotoPost) {
         userAxios.post("/api/motos", newMotoPost)
-            .then(res => console.log(res.data))
+            .then(res => {
+                setUserState(prevUserState => ({
+                    ...prevUserState,
+                    motoPosts: [prevUserState.motoPosts, res.data]
+                }))
+            })
             .catch(err => console.log(err.response.data.errMsg))
     }
 
