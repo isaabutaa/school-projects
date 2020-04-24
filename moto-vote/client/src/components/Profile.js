@@ -1,7 +1,7 @@
 import React, { useContext } from "react"
 import MotoPostForm from "./MotoPostForm.js"
 import MotoPostList from "./MotoPostList.js"
-import {UserContext} from "../context/UserProvider.js"
+import { UserContext } from "../context/UserProvider.js"
 
 export default function Profile() {
     const { motoPosts, user: { username }, addMotoPost } = useContext(UserContext)
