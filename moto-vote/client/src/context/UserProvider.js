@@ -59,12 +59,34 @@ export default function UserProvider(props) {
         })
     }
 
+    function getMotoPosts() {
+        userAxios.get("/api/motos/user")
+            .then(res => {
+                setUserState(prevUserState => ({
+                    ...prevUserState,
+                    motoPosts: res.data
+                }))
+            })
+            .catch(err => console.log(err.response.data.errMsg))
+    }
+
     function addMotoPost(newMotoPost) {
         userAxios.post("/api/motos", newMotoPost)
             .then(res => {
                 setUserState(prevUserState => ({
                     ...prevUserState,
                     motoPosts: [...prevUserState.motoPosts, res.data]
+                }))
+            })
+            .catch(err => console.log(err.response.data.errMsg))
+    }
+
+    function deleteMotoPost(postId) {
+        userAxios.delete(`api/motos/${postId}`)
+            .then(res => {
+                setUserState(prevUserState => ({
+                    ...prevUserState,
+                    motoPosts: prevUserState.motoPosts.map(post => post._id !== postId)
                 }))
             })
             .catch(err => console.log(err.response.data.errMsg))
@@ -77,7 +99,9 @@ export default function UserProvider(props) {
                 signup,
                 login,
                 logout,
-                addMotoPost
+                getMotoPosts,
+                addMotoPost,
+                deleteMotoPost
             }}
         >
             {props.children}

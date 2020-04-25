@@ -1,10 +1,15 @@
-import React, { useContext } from "react"
+import React, { useContext, useEffect } from "react"
 import MotoPostForm from "./MotoPostForm.js"
 import MotoPostList from "./MotoPostList.js"
 import { UserContext } from "../context/UserProvider.js"
 
 export default function Profile() {
-    const { motoPosts, user: { username }, addMotoPost } = useContext(UserContext)
+    const { motoPosts, user: { username }, getMotoPosts, addMotoPost } = useContext(UserContext)
+
+    useEffect(() => {
+        getMotoPosts()
+    })
+
     return (
         <div>
             <p>This is your profile page @{username}</p>
