@@ -19,6 +19,7 @@ export default function HomePage() {
 
     function handleSubmit(e) {
         e.preventDefault()
+        console.log(apiKey)
         getData()
         setForVariable({searchTerm: inputData.searchKeyword})
         setInputData({searchKeyword: ""})
