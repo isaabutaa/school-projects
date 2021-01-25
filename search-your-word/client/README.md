@@ -11,4 +11,4 @@ This is a very simple client React app that allows the user to search for defini
 ![thesaurus example](/screenshots/syw-thesaurus.PNG)
 
 ### Responsive design:
-![syw-mobile.PNG](/screenshots/syw-mobile.PNG)
+![mobile example](/screenshots/syw-mobile.PNG)
